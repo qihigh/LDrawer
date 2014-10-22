@@ -44,8 +44,8 @@ public class SampleActivity extends Activity {
             }
         };
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-            drawerArrow, R.string.drawer_open,
-            R.string.drawer_close) {
+                drawerArrow, R.string.drawer_open,
+                R.string.drawer_close) {
 
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
@@ -62,16 +62,16 @@ public class SampleActivity extends Activity {
 
 
         String[] values = new String[]{
-            "Stop Animation (Back icon)",
-            "Stop Animation (Home icon)",
-            "Start Animation",
-            "Change Color",
-            "GitHub Page",
-            "Share",
-            "Rate"
+                "Stop Animation (Back icon)",
+                "Stop Animation (Home icon)",
+                "Start Animation",
+                "Change Color",
+                "GitHub Page",
+                "Share",
+                "Rate"
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-            android.R.layout.simple_list_item_1, android.R.id.text1, values);
+                android.R.layout.simple_list_item_1, android.R.id.text1, values);
         mDrawerList.setAdapter(adapter);
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -109,13 +109,13 @@ public class SampleActivity extends Activity {
                         share.setType("text/plain");
                         share.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         share.putExtra(Intent.EXTRA_SUBJECT,
-                            getString(R.string.app_name));
+                                getString(R.string.app_name));
                         share.putExtra(Intent.EXTRA_TEXT, getString(R.string.app_description) + "\n" +
-                            "GitHub Page :  https://github.com/IkiMuhendis/LDrawer\n" +
-                            "Sample App : https://play.google.com/store/apps/details?id=" +
-                            getPackageName());
+                                "GitHub Page :  https://github.com/IkiMuhendis/LDrawer\n" +
+                                "Sample App : https://play.google.com/store/apps/details?id=" +
+                                getPackageName());
                         startActivity(Intent.createChooser(share,
-                            getString(R.string.app_name)));
+                                getString(R.string.app_name)));
                         break;
                     case 6:
                         String appUrl = "https://play.google.com/store/apps/details?id=" + getPackageName();
@@ -124,6 +124,14 @@ public class SampleActivity extends Activity {
                         break;
                 }
 
+            }
+        });
+
+        //不绑定到actionbar上，使用drawerArrow
+        findViewById(R.id.no_actionbar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SampleActivity.this, NoActionBarSampleActivity.class));
             }
         });
     }

@@ -10,11 +10,22 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/app_description"/>
+            android:text="@string/app_description" />
 
+        <TextView
+            android:id="@+id/no_actionbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="no action bar"
+            android:layout_below="@id/content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/flat_holoblue_selector"
+            android:padding="10dp" />
     </RelativeLayout>
 
     <!-- The navigation drawer -->
@@ -27,8 +38,7 @@
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
-        android:drawSelectorOnTop="false">
-    </ListView>
+        android:drawSelectorOnTop="false"></ListView>
 
 </android.support.v4.widget.DrawerLayout>
 

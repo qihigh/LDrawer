@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NoActionBarSampleActivity"
+            android:label="@string/title_activity_no_action_bar_sample" >
+        </activity>
     </application>
 
 </manifest>
